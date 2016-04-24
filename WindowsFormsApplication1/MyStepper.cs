@@ -117,7 +117,7 @@ namespace Move_cable
         }
         public void close()
         {
-            stepper.steppers[0].Engaged = false;
+            //stepper.steppers[0].Engaged = false;
             //close the Stepper object
             stepper.close();
             //set the object to null to get it out of memory

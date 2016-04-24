@@ -20,7 +20,9 @@ namespace WindowsFormsApplication1
         private String rootPath;
         private int step;
 
+
         private List<MyStepper> steppers;
+        Stepper_Handler stepper_handler;
 
         public Form1()
         {
@@ -39,9 +41,7 @@ namespace WindowsFormsApplication1
             lengths = new List<NumericUpDown> { length1_wid, length2_wid, length3_wid, length4_wid, length5_wid, length6_wid };
             rootPath = root_path_wid.Text;
             step = 0;
-            steppers = new List<MyStepper>();
-            steppers.Add(new MyStepper());
-
+           
             foreach (CheckBox check in checkBoxes)
             {
                 check.Enabled = false;
@@ -71,52 +71,41 @@ namespace WindowsFormsApplication1
             {
                 paths[i].Text = rootPath + @"\coords" + (i + 1);
             }
-            for (int i = 0; i < steppers.Count; i++)
-            {
-                steppers[i].Path = paths[i].Text;
-            }
+
         }
 
         private void path1_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[0].Path = paths[0].Text;
+            
         }
 
         private void path2_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[1].Path = paths[1].Text;
+            
         }
 
         private void path3_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[2].Path = paths[2].Text;
         }
 
         private void path4_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[3].Path = paths[3].Text;
+            
         }
 
         private void path5_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[4].Path = paths[4].Text;
+            
         }
 
         private void path6_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[5].Path = paths[5].Text;
+            
         }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
-            if (checkBox6.Checked)
-            {
-                steppers.Add(new MyStepper(path6_wid.Text, (int)length6_wid.Value));
-            }
-            else
-            {
-                steppers.RemoveAt(5);
-            }
+          
         }
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
@@ -126,7 +115,6 @@ namespace WindowsFormsApplication1
                 checkBox6.Enabled = true;
                 path6_wid.Enabled = true;
                 length6_wid.Enabled = true;
-                steppers.Add(new MyStepper(path5_wid.Text, (int)length5_wid.Value));
             }
             else
             {
@@ -137,7 +125,6 @@ namespace WindowsFormsApplication1
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
                 }
-                steppers.RemoveRange(4, steppers.Count-4);
             }
         }
 
@@ -148,7 +135,6 @@ namespace WindowsFormsApplication1
                 checkBox5.Enabled = true;
                 path5_wid.Enabled = true;
                 length5_wid.Enabled = true;
-                steppers.Add(new MyStepper(path4_wid.Text, (int)length4_wid.Value));
             }
             else
             {
@@ -160,7 +146,6 @@ namespace WindowsFormsApplication1
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
                 }
-                steppers.RemoveRange(3, steppers.Count-3);
             }
 
         }
@@ -172,7 +157,6 @@ namespace WindowsFormsApplication1
                 checkBox4.Enabled = true;
                 path4_wid.Enabled = true;
                 length4_wid.Enabled = true;
-                steppers.Add(new MyStepper(path3_wid.Text,(int)length3_wid.Value));
             }
             else
             {
@@ -183,7 +167,6 @@ namespace WindowsFormsApplication1
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
                 }
-                steppers.RemoveRange(2, steppers.Count-2);
             }
 
         }
@@ -192,7 +175,6 @@ namespace WindowsFormsApplication1
         {
             if (checkBox2.Checked)
             {
-                steppers.Add(new MyStepper(path2_wid.Text, (int)length2_wid.Value));
                 checkBox3.Enabled = true;
                 path3_wid.Enabled = true;
                 length3_wid.Enabled = true;
@@ -206,7 +188,6 @@ namespace WindowsFormsApplication1
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
                 }
-                steppers.RemoveRange(1, steppers.Count-1);
             }
 
         }
@@ -215,7 +196,6 @@ namespace WindowsFormsApplication1
         {
             if (checkBox1.Checked)
             {
-                steppers.Add(new MyStepper(path1_wid.Text, (int)length1_wid.Value));
                 checkBox2.Enabled = true;
                 path2_wid.Enabled = true;
                 length2_wid.Enabled = true;
@@ -229,43 +209,42 @@ namespace WindowsFormsApplication1
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
                 }
-                steppers.RemoveRange(0, steppers.Count);
             }
         }
 
         private void length1_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[0].Initial_position = (int)length1_wid.Value;
         }
 
         private void length2_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[1].Initial_position = (int)length2_wid.Value;
         }
 
         private void length3_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[2].Initial_position = (int)length3_wid.Value;
         }
 
         private void length4_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[3].Initial_position = (int)length4_wid.Value;
         }
 
         private void length5_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[4].Initial_position = (int)length5_wid.Value;
         }
 
         private void length6_wid_TextChanged(object sender, EventArgs e)
         {
-            steppers[5].Initial_position = (int)length6_wid.Value;
         }
 
         private void go_button_Click(object sender, EventArgs e)
         {
-            
+            steppers = new List<MyStepper>();
+            for(int i=0;checkBoxes[i].Checked;i++)
+            {
+                steppers.Add(new MyStepper(paths[i].Text,(int)lengths[i].Value));
+            }
+            stepper_handler = new Stepper_Handler(steppers);
+            stepper_handler.run();
         }
 
         private void length6_wid_ValueChanged(object sender, EventArgs e)

@@ -37,16 +37,20 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
             paths = new List<TextBox> { path1_wid, path2_wid, path3_wid, path4_wid, path5_wid, path6_wid };
             checkBoxes = new List<CheckBox> { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
             lengths = new List<NumericUpDown> { length1_wid, length2_wid, length3_wid, length4_wid, length5_wid, length6_wid };
-            Mij= new List<NumericUpDown> { M1x,M1y,M1z,M2x,M2y,M2z,M3x,M3y,M3z,M4x,M4y,M4z,M5x,M5y,M5z,M6x,M6y,M6z,P0x,P0y,P0z};
-         
+            Mij = new List<NumericUpDown> { M1x, M1y, M1z, M2x, M2y, M2z, M3x, M3y, M3z, M4x, M4y, M4z, M5x, M5y, M5z, M6x, M6y, M6z, P0x, P0y, P0z };
+
             step = 0;
 
             root_path_wid.Text = rootPath;
-            String[] lines =System.IO.File.ReadAllLines(rootPath + @"\input.txt");
+            List<String> lines;
+            if (!System.IO.File.Exists(rootPath + @"\input.txt"))
+                lines = new List<String>{ "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0" ,"0,0,0"};
+            else
+                lines =new List<String>(System.IO.File.ReadAllLines(rootPath + @"\input.txt"));
             for (int i = 0; i < Mij.Count; i++)
             {
                 Mij[i].Maximum = 100000000000;

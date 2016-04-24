@@ -56,6 +56,7 @@
             this.length4_wid = new System.Windows.Forms.NumericUpDown();
             this.length5_wid = new System.Windows.Forms.NumericUpDown();
             this.length6_wid = new System.Windows.Forms.NumericUpDown();
+            this.Browse_root = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.length1_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length2_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length3_wid)).BeginInit();
@@ -246,7 +247,7 @@
             // 
             // go_button
             // 
-            this.go_button.Location = new System.Drawing.Point(55, 387);
+            this.go_button.Location = new System.Drawing.Point(105, 370);
             this.go_button.Name = "go_button";
             this.go_button.Size = new System.Drawing.Size(128, 55);
             this.go_button.TabIndex = 20;
@@ -256,7 +257,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(189, 419);
+            this.progressBar1.Location = new System.Drawing.Point(15, 431);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(304, 23);
             this.progressBar1.TabIndex = 21;
@@ -264,7 +265,7 @@
             // 
             // length1_wid
             // 
-            this.length1_wid.Location = new System.Drawing.Point(373, 104);
+            this.length1_wid.Location = new System.Drawing.Point(195, 104);
             this.length1_wid.Name = "length1_wid";
             this.length1_wid.Size = new System.Drawing.Size(120, 22);
             this.length1_wid.TabIndex = 22;
@@ -272,7 +273,7 @@
             // 
             // length2_wid
             // 
-            this.length2_wid.Location = new System.Drawing.Point(373, 153);
+            this.length2_wid.Location = new System.Drawing.Point(195, 153);
             this.length2_wid.Name = "length2_wid";
             this.length2_wid.Size = new System.Drawing.Size(120, 22);
             this.length2_wid.TabIndex = 23;
@@ -280,7 +281,7 @@
             // 
             // length3_wid
             // 
-            this.length3_wid.Location = new System.Drawing.Point(373, 193);
+            this.length3_wid.Location = new System.Drawing.Point(195, 195);
             this.length3_wid.Name = "length3_wid";
             this.length3_wid.Size = new System.Drawing.Size(120, 22);
             this.length3_wid.TabIndex = 24;
@@ -288,7 +289,7 @@
             // 
             // length4_wid
             // 
-            this.length4_wid.Location = new System.Drawing.Point(373, 240);
+            this.length4_wid.Location = new System.Drawing.Point(195, 242);
             this.length4_wid.Name = "length4_wid";
             this.length4_wid.Size = new System.Drawing.Size(120, 22);
             this.length4_wid.TabIndex = 25;
@@ -296,7 +297,7 @@
             // 
             // length5_wid
             // 
-            this.length5_wid.Location = new System.Drawing.Point(373, 290);
+            this.length5_wid.Location = new System.Drawing.Point(195, 288);
             this.length5_wid.Name = "length5_wid";
             this.length5_wid.Size = new System.Drawing.Size(120, 22);
             this.length5_wid.TabIndex = 26;
@@ -304,17 +305,28 @@
             // 
             // length6_wid
             // 
-            this.length6_wid.Location = new System.Drawing.Point(373, 340);
+            this.length6_wid.Location = new System.Drawing.Point(195, 335);
             this.length6_wid.Name = "length6_wid";
             this.length6_wid.Size = new System.Drawing.Size(120, 22);
             this.length6_wid.TabIndex = 27;
             this.length6_wid.ValueChanged += new System.EventHandler(this.length6_wid_ValueChanged);
             // 
+            // Browse_root
+            // 
+            this.Browse_root.Location = new System.Drawing.Point(195, 61);
+            this.Browse_root.Name = "Browse_root";
+            this.Browse_root.Size = new System.Drawing.Size(120, 28);
+            this.Browse_root.TabIndex = 28;
+            this.Browse_root.Text = "Browse";
+            this.Browse_root.UseVisualStyleBackColor = true;
+            this.Browse_root.Click += new System.EventHandler(this.Browse_root_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(505, 463);
+            this.ClientSize = new System.Drawing.Size(334, 463);
+            this.Controls.Add(this.Browse_root);
             this.Controls.Add(this.length6_wid);
             this.Controls.Add(this.length5_wid);
             this.Controls.Add(this.length4_wid);
@@ -387,5 +399,6 @@
         private System.Windows.Forms.NumericUpDown length4_wid;
         private System.Windows.Forms.NumericUpDown length5_wid;
         private System.Windows.Forms.NumericUpDown length6_wid;
+        private System.Windows.Forms.Button Browse_root;
     }
 }

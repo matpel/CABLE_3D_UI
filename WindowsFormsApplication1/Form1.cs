@@ -41,7 +41,7 @@ namespace WindowsFormsApplication1
             lengths = new List<NumericUpDown> { length1_wid, length2_wid, length3_wid, length4_wid, length5_wid, length6_wid };
             rootPath = root_path_wid.Text;
             step = 0;
-           
+
             foreach (CheckBox check in checkBoxes)
             {
                 check.Enabled = false;
@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
                 text.Enabled = false;
             }
             paths[0].Enabled = true;
-            foreach(NumericUpDown text in lengths)
+            foreach (NumericUpDown text in lengths)
             {
                 text.Enabled = false;
             }
@@ -76,12 +76,12 @@ namespace WindowsFormsApplication1
 
         private void path1_wid_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void path2_wid_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void path3_wid_TextChanged(object sender, EventArgs e)
@@ -90,22 +90,22 @@ namespace WindowsFormsApplication1
 
         private void path4_wid_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void path5_wid_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void path6_wid_TextChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
-          
+
         }
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
@@ -119,7 +119,7 @@ namespace WindowsFormsApplication1
             else
             {
                 for (int i = 5; i < 6; i++)
-                { 
+                {
                     checkBoxes[i].Enabled = false;
                     checkBoxes[i].Checked = false;
                     paths[i].Enabled = false;
@@ -239,11 +239,11 @@ namespace WindowsFormsApplication1
         private void go_button_Click(object sender, EventArgs e)
         {
             steppers = new List<MyStepper>();
-            for(int i=0;checkBoxes[i].Checked;i++)
+            for (int i = 0; checkBoxes[i].Checked; i++)
             {
-                steppers.Add(new MyStepper(paths[i].Text,(int)lengths[i].Value));
+                steppers.Add(new MyStepper(paths[i].Text, (int)lengths[i].Value));
             }
-            stepper_handler = new Stepper_Handler(steppers);
+            stepper_handler = new Stepper_Handler(steppers,this);
             stepper_handler.run();
         }
 
@@ -275,6 +275,25 @@ namespace WindowsFormsApplication1
         private void length1_wid_ValueChanged(object sender, EventArgs e)
         {
 
+        }
+
+
+        public void lengths_Change(List<double> values)
+        {
+            for (int i = 0; i < values.Count; i++)
+                lengths[i].Value =(decimal)values[i];
+        }
+
+        private void Browse_root_Click(object sender, EventArgs e)
+        {
+            int size = -1;
+            FolderBrowserDialog fDialog = new FolderBrowserDialog();
+            DialogResult result =fDialog.ShowDialog(); // Show the dialog.
+            if (result == DialogResult.OK) // Test result.
+            {
+                root_path_wid.Text = fDialog.SelectedPath;
+                rootPath = fDialog.SelectedPath; 
+            }
         }
     }
 }

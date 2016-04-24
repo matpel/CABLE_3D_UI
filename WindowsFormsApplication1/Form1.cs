@@ -15,9 +15,10 @@ namespace WindowsFormsApplication1
     {
 
         private List<TextBox> paths;
+        private String rootPath=@"D:\Projets\Departement\Trajectoire";
         private List<NumericUpDown> lengths;
         private List<CheckBox> checkBoxes;
-        private String rootPath;
+        private List<NumericUpDown> Mij;
         private int step;
 
 
@@ -36,11 +37,28 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             paths = new List<TextBox> { path1_wid, path2_wid, path3_wid, path4_wid, path5_wid, path6_wid };
             checkBoxes = new List<CheckBox> { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
             lengths = new List<NumericUpDown> { length1_wid, length2_wid, length3_wid, length4_wid, length5_wid, length6_wid };
-            rootPath = root_path_wid.Text;
+            Mij= new List<NumericUpDown> { M1x,M1y,M1z,M2x,M2y,M2z,M3x,M3y,M3z,M4x,M4y,M4z,M5x,M5y,M5z,M6x,M6y,M6z,P0x,P0y,P0z};
+         
             step = 0;
+
+            root_path_wid.Text = rootPath;
+            String[] lines =System.IO.File.ReadAllLines(rootPath + @"\input.txt");
+            for (int i = 0; i < Mij.Count; i++)
+            {
+                Mij[i].Maximum = 100000000000;
+                Mij[i].Minimum = -100000000000;
+            }
+            for (int i = 0; i < Mij.Count; i += 3)
+            {
+                String[] coords = lines[i / 3].Split(',');
+                Mij[i].Value = (decimal)Int32.Parse(coords[0]);
+                Mij[i + 1].Value = (decimal)Int32.Parse(coords[1]);
+                Mij[i + 2].Value = (decimal)Int32.Parse(coords[2]);
+            }
 
             foreach (CheckBox check in checkBoxes)
             {
@@ -69,7 +87,7 @@ namespace WindowsFormsApplication1
             rootPath = root_path_wid.Text;
             for (int i = 0; i < 6; i++)
             {
-                paths[i].Text = rootPath + @"\coords" + (i + 1);
+                paths[i].Text = rootPath + @"\coords" + (i + 1)+".txt";
             }
 
         }
@@ -294,6 +312,264 @@ namespace WindowsFormsApplication1
                 root_path_wid.Text = fDialog.SelectedPath;
                 rootPath = fDialog.SelectedPath; 
             }
+        }
+
+        private void numericUpDown18_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown16_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M6y_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M5z_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M5y_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M5x_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M4z_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M4y_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M4x_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M3z_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M3y_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M3x_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M2z_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M2y_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M2x_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M1z_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M1y_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M1x_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M2z_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M6y_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void m6x_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M5z_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M5y_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M5x_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M4z_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M4y_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M4x_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M3z_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M3y_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M3x_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M6z_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M2y_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M2x_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M1z_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M1y_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void M1x_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            List<String> lines = new List<String>();
+            for(int i=0;i<Mij.Count;i+=3)
+                lines.Add(Mij[i].Value+","+Mij[i+1].Value+","+ Mij[i+2].Value);
+            System.IO.File.WriteAllLines(rootPath+@"\input.txt",lines);
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P0z_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P0x_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

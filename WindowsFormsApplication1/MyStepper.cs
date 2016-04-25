@@ -22,6 +22,7 @@ namespace Move_cable
         public double delta_L;
         public String Path;
         static bool tourne;
+        public double Length;
         public Boolean Error_timestamp = false;
 
         public MyStepper(String Path="",int Initial_position = 0)
@@ -71,6 +72,7 @@ namespace Move_cable
             
             double l0 = liste[i];
             double l1 = liste[i+1];
+            Length = l1;
             double dx = 16 * (l0 - l1) * 200 / a0;
             double speed = Math.Abs(dx) / dt;
 

@@ -24,15 +24,20 @@ namespace WindowsFormsApplication1
         {
             foreach (MyStepper stepper in steppers)
                 stepper.load();
-         
-            for (int i = 0; i < MyStepper.N_step; i++)
+            context.set_nstep(MyStepper.N_step);
+
+
+            for (int i = 0; i < MyStepper.N_step - 1; i++)
             {
+                List<double> lengths = new List<double>();
                 foreach (MyStepper stepper in steppers)
                 {
                     stepper.run_step(i);
+                    lengths.Add(stepper.Length);
                 }
 
-                context.lengths_Change(new List<double> { steppers[0].Goal_Position, steppers[1].Goal_Position, steppers[2].Goal_Position, steppers[3].Goal_Position, steppers[4].Goal_Position, steppers[5].Goal_Position});
+                context.lengths_Change(lengths);
+                context.set_progress(i);
                 Boolean running;
                 do
                 {

@@ -312,10 +312,12 @@ namespace WindowsFormsApplication1
         {
             progressBar1.Value = state;
         }
+
         public void set_nstep(int N)
         {
             progressBar1.Maximum = N;
         }
+
         private void Browse_root_Click(object sender, EventArgs e)
         {
             int size = -1;

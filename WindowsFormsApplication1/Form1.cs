@@ -299,13 +299,23 @@ namespace WindowsFormsApplication1
 
         }
 
-
         public void lengths_Change(List<double> values)
         {
             for (int i = 0; i < values.Count; i++)
-                lengths[i].Value =(decimal)values[i];
+            {
+                lengths[i].Value = (decimal)values[i];
+                lengths[i].Update();
+            }
         }
 
+        public void set_progress(int state)
+        {
+            progressBar1.Value = state;
+        }
+        public void set_nstep(int N)
+        {
+            progressBar1.Maximum = N;
+        }
         private void Browse_root_Click(object sender, EventArgs e)
         {
             int size = -1;

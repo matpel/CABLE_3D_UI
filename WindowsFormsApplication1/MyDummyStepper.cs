@@ -34,6 +34,7 @@ namespace Move_cable
             stepper = new Stepper();
             liste = new List<double>();
             tourne = true;
+            this.Length = Length;
         }
         public void load()
         {

@@ -50,7 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DummyStepper_Handler.cs" />
+    <Compile Include="MyDummyStepper.cs" />
     <Compile Include="Stepper_Handler.cs" />
     <Compile Include="MyStepper.cs" />
     <Compile Include="Form1.cs">

@@ -25,10 +25,11 @@ namespace Move_cable
         public double Length;
         public Boolean Error_timestamp = false;
 
-        public MyStepper(String Path="",int Initial_position = 0)
+        public MyStepper(int Length,String Path="",int Initial_position = 0)
         {
             this.Path = Path;
             this.Initial_position = Initial_position;
+            this.Length = Length;
             stepper = new Stepper();
             liste = new List<double>();
             tourne = true;

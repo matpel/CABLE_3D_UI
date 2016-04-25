@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
     {
 
         private List<TextBox> paths;
-        private String rootPath=@"D:\Projets\Departement\Trajectoire";
+        private String rootPath = @"D:\Projets\Departement\Trajectoire";
         private List<NumericUpDown> lengths;
         private List<CheckBox> checkBoxes;
         private List<NumericUpDown> Mij;
@@ -23,7 +23,9 @@ namespace WindowsFormsApplication1
 
 
         private List<MyStepper> steppers;
-        Stepper_Handler stepper_handler;
+        private List<MyDummyStepper> dummy_steppers;
+        private Stepper_Handler stepper_handler;
+        private DummyStepper_Handler dummyStepper_Handler;
 
         public Form1()
         {
@@ -48,9 +50,9 @@ namespace WindowsFormsApplication1
             root_path_wid.Text = rootPath;
             List<String> lines;
             if (!System.IO.File.Exists(rootPath + @"\input.txt"))
-                lines = new List<String>{ "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0" ,"0,0,0"};
+                lines = new List<String> { "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0" };
             else
-                lines =new List<String>(System.IO.File.ReadAllLines(rootPath + @"\input.txt"));
+                lines = new List<String>(System.IO.File.ReadAllLines(rootPath + @"\input.txt"));
             for (int i = 0; i < Mij.Count; i++)
             {
                 Mij[i].Maximum = 100000000000;
@@ -91,7 +93,7 @@ namespace WindowsFormsApplication1
             rootPath = root_path_wid.Text;
             for (int i = 0; i < 6; i++)
             {
-                paths[i].Text = rootPath + @"\coords" + (i + 1)+".txt";
+                paths[i].Text = rootPath + @"\coords" + (i + 1) + ".txt";
             }
 
         }
@@ -260,13 +262,27 @@ namespace WindowsFormsApplication1
 
         private void go_button_Click(object sender, EventArgs e)
         {
-            steppers = new List<MyStepper>();
-            for (int i = 0; checkBoxes[i].Checked; i++)
+            if (!Dummy_check.Checked)
             {
-                steppers.Add(new MyStepper(paths[i].Text, (int)lengths[i].Value));
+                steppers = new List<MyStepper>();
+                for (int i = 0; checkBoxes[i].Checked; i++)
+                {
+                    steppers.Add(new MyStepper((int)lengths[i].Value, paths[i].Text));
+                }
+                stepper_handler = new Stepper_Handler(steppers, this);
+                stepper_handler.run();
             }
-            stepper_handler = new Stepper_Handler(steppers,this);
-            stepper_handler.run();
+            else
+            {
+
+                dummy_steppers = new List<MyDummyStepper>();
+                for (int i = 0; checkBoxes[i].Checked; i++)
+                {
+                    dummy_steppers.Add(new MyDummyStepper((int)lengths[i].Value, paths[i].Text));
+                }
+                dummyStepper_Handler = new DummyStepper_Handler(dummy_steppers, this);
+                dummyStepper_Handler.run();
+            }
         }
 
         private void length6_wid_ValueChanged(object sender, EventArgs e)
@@ -322,11 +338,11 @@ namespace WindowsFormsApplication1
         {
             int size = -1;
             FolderBrowserDialog fDialog = new FolderBrowserDialog();
-            DialogResult result =fDialog.ShowDialog(); // Show the dialog.
+            DialogResult result = fDialog.ShowDialog(); // Show the dialog.
             if (result == DialogResult.OK) // Test result.
             {
                 root_path_wid.Text = fDialog.SelectedPath;
-                rootPath = fDialog.SelectedPath; 
+                rootPath = fDialog.SelectedPath;
             }
         }
 
@@ -513,9 +529,9 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             List<String> lines = new List<String>();
-            for(int i=0;i<Mij.Count;i+=3)
-                lines.Add(Mij[i].Value+","+Mij[i+1].Value+","+ Mij[i+2].Value);
-            System.IO.File.WriteAllLines(rootPath+@"\input.txt",lines);
+            for (int i = 0; i < Mij.Count; i += 3)
+                lines.Add(Mij[i].Value + "," + Mij[i + 1].Value + "," + Mij[i + 2].Value);
+            System.IO.File.WriteAllLines(rootPath + @"\input.txt", lines);
         }
 
         private void label11_Click(object sender, EventArgs e)
@@ -584,6 +600,16 @@ namespace WindowsFormsApplication1
         }
 
         private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox7_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Dummy_check_CheckedChanged(object sender, EventArgs e)
         {
 
         }

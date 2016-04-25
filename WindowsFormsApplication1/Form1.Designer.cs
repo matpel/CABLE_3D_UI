@@ -84,6 +84,7 @@
             this.P0x = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
+            this.Dummy_check = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.length1_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length2_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length3_wid)).BeginInit();
@@ -320,6 +321,11 @@
             // length1_wid
             // 
             this.length1_wid.Location = new System.Drawing.Point(415, 63);
+            this.length1_wid.Maximum = new decimal(new int[] {
+            1874919424,
+            2328306,
+            0,
+            0});
             this.length1_wid.Name = "length1_wid";
             this.length1_wid.Size = new System.Drawing.Size(120, 22);
             this.length1_wid.TabIndex = 22;
@@ -328,6 +334,11 @@
             // length2_wid
             // 
             this.length2_wid.Location = new System.Drawing.Point(415, 112);
+            this.length2_wid.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
             this.length2_wid.Name = "length2_wid";
             this.length2_wid.Size = new System.Drawing.Size(120, 22);
             this.length2_wid.TabIndex = 23;
@@ -336,6 +347,11 @@
             // length3_wid
             // 
             this.length3_wid.Location = new System.Drawing.Point(415, 154);
+            this.length3_wid.Maximum = new decimal(new int[] {
+            1874919424,
+            2328306,
+            0,
+            0});
             this.length3_wid.Name = "length3_wid";
             this.length3_wid.Size = new System.Drawing.Size(120, 22);
             this.length3_wid.TabIndex = 24;
@@ -344,6 +360,11 @@
             // length4_wid
             // 
             this.length4_wid.Location = new System.Drawing.Point(415, 201);
+            this.length4_wid.Maximum = new decimal(new int[] {
+            1661992960,
+            1808227885,
+            5,
+            0});
             this.length4_wid.Name = "length4_wid";
             this.length4_wid.Size = new System.Drawing.Size(120, 22);
             this.length4_wid.TabIndex = 25;
@@ -352,6 +373,11 @@
             // length5_wid
             // 
             this.length5_wid.Location = new System.Drawing.Point(415, 247);
+            this.length5_wid.Maximum = new decimal(new int[] {
+            -559939584,
+            902409669,
+            54,
+            0});
             this.length5_wid.Name = "length5_wid";
             this.length5_wid.Size = new System.Drawing.Size(120, 22);
             this.length5_wid.TabIndex = 26;
@@ -360,6 +386,11 @@
             // length6_wid
             // 
             this.length6_wid.Location = new System.Drawing.Point(415, 294);
+            this.length6_wid.Maximum = new decimal(new int[] {
+            -1304428544,
+            434162106,
+            542,
+            0});
             this.length6_wid.Name = "length6_wid";
             this.length6_wid.Size = new System.Drawing.Size(120, 22);
             this.length6_wid.TabIndex = 27;
@@ -643,11 +674,23 @@
             this.label12.Text = "Length";
             this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
+            // Dummy_check
+            // 
+            this.Dummy_check.AutoSize = true;
+            this.Dummy_check.Location = new System.Drawing.Point(290, 410);
+            this.Dummy_check.Name = "Dummy_check";
+            this.Dummy_check.Size = new System.Drawing.Size(77, 21);
+            this.Dummy_check.TabIndex = 74;
+            this.Dummy_check.Text = "Dummy";
+            this.Dummy_check.UseVisualStyleBackColor = true;
+            this.Dummy_check.CheckedChanged += new System.EventHandler(this.Dummy_check_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 477);
+            this.Controls.Add(this.Dummy_check);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.P0z);
@@ -797,5 +840,6 @@
         private System.Windows.Forms.NumericUpDown P0x;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.CheckBox Dummy_check;
     }
 }

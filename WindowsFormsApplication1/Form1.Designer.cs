@@ -90,26 +90,33 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label14 = new System.Windows.Forms.Label();
-            this.step_num1 = new System.Windows.Forms.NumericUpDown();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.velocity_num1 = new System.Windows.Forms.NumericUpDown();
-            this.velocity_num2 = new System.Windows.Forms.NumericUpDown();
-            this.step_num2 = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.velocity_num3 = new System.Windows.Forms.NumericUpDown();
-            this.step_num3 = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
-            this.velocity_num4 = new System.Windows.Forms.NumericUpDown();
-            this.step_num4 = new System.Windows.Forms.NumericUpDown();
-            this.label19 = new System.Windows.Forms.Label();
-            this.velocity_num5 = new System.Windows.Forms.NumericUpDown();
-            this.step_num5 = new System.Windows.Forms.NumericUpDown();
-            this.label20 = new System.Windows.Forms.Label();
+            this.engaged6 = new System.Windows.Forms.CheckBox();
+            this.engaged5 = new System.Windows.Forms.CheckBox();
+            this.engaged4 = new System.Windows.Forms.CheckBox();
+            this.engaged3 = new System.Windows.Forms.CheckBox();
+            this.engaged2 = new System.Windows.Forms.CheckBox();
+            this.engaged1 = new System.Windows.Forms.CheckBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.velocity_num6 = new System.Windows.Forms.NumericUpDown();
             this.step_num6 = new System.Windows.Forms.NumericUpDown();
             this.label21 = new System.Windows.Forms.Label();
+            this.velocity_num5 = new System.Windows.Forms.NumericUpDown();
+            this.step_num5 = new System.Windows.Forms.NumericUpDown();
+            this.label20 = new System.Windows.Forms.Label();
+            this.velocity_num4 = new System.Windows.Forms.NumericUpDown();
+            this.step_num4 = new System.Windows.Forms.NumericUpDown();
+            this.label19 = new System.Windows.Forms.Label();
+            this.velocity_num3 = new System.Windows.Forms.NumericUpDown();
+            this.step_num3 = new System.Windows.Forms.NumericUpDown();
+            this.label18 = new System.Windows.Forms.Label();
+            this.velocity_num2 = new System.Windows.Forms.NumericUpDown();
+            this.step_num2 = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.velocity_num1 = new System.Windows.Forms.NumericUpDown();
+            this.label15 = new System.Windows.Forms.Label();
+            this.step_num1 = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.length1_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length2_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length3_wid)).BeginInit();
@@ -141,18 +148,18 @@
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.velocity_num6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.step_num6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num1)).BeginInit();
             this.SuspendLayout();
             // 
             // root_path_wid
@@ -837,6 +844,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.engaged6);
+            this.tabPage2.Controls.Add(this.engaged5);
+            this.tabPage2.Controls.Add(this.engaged4);
+            this.tabPage2.Controls.Add(this.engaged3);
+            this.tabPage2.Controls.Add(this.engaged2);
+            this.tabPage2.Controls.Add(this.engaged1);
+            this.tabPage2.Controls.Add(this.label22);
             this.tabPage2.Controls.Add(this.velocity_num6);
             this.tabPage2.Controls.Add(this.step_num6);
             this.tabPage2.Controls.Add(this.label21);
@@ -865,129 +879,106 @@
             this.tabPage2.Text = "Calibration";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label14
+            // engaged6
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(29, 29);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(27, 17);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "M1";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
+            this.engaged6.AutoSize = true;
+            this.engaged6.Enabled = false;
+            this.engaged6.Location = new System.Drawing.Point(467, 338);
+            this.engaged6.Name = "engaged6";
+            this.engaged6.Size = new System.Drawing.Size(18, 17);
+            this.engaged6.TabIndex = 26;
+            this.engaged6.UseVisualStyleBackColor = true;
+            this.engaged6.CheckedChanged += new System.EventHandler(this.engaged6_CheckedChanged);
             // 
-            // step_num1
+            // engaged5
             // 
-            this.step_num1.Enabled = false;
-            this.step_num1.Location = new System.Drawing.Point(85, 29);
-            this.step_num1.Name = "step_num1";
-            this.step_num1.Size = new System.Drawing.Size(120, 22);
-            this.step_num1.TabIndex = 1;
-            this.step_num1.ValueChanged += new System.EventHandler(this.step_num1_ValueChanged);
+            this.engaged5.AutoSize = true;
+            this.engaged5.Enabled = false;
+            this.engaged5.Location = new System.Drawing.Point(467, 277);
+            this.engaged5.Name = "engaged5";
+            this.engaged5.Size = new System.Drawing.Size(18, 17);
+            this.engaged5.TabIndex = 25;
+            this.engaged5.UseVisualStyleBackColor = true;
+            this.engaged5.CheckedChanged += new System.EventHandler(this.engaged5_CheckedChanged);
             // 
-            // label15
+            // engaged4
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(128, 9);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(32, 17);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "Pas";
+            this.engaged4.AutoSize = true;
+            this.engaged4.Enabled = false;
+            this.engaged4.Location = new System.Drawing.Point(467, 215);
+            this.engaged4.Name = "engaged4";
+            this.engaged4.Size = new System.Drawing.Size(18, 17);
+            this.engaged4.TabIndex = 24;
+            this.engaged4.UseVisualStyleBackColor = true;
+            this.engaged4.CheckedChanged += new System.EventHandler(this.engaged4_CheckedChanged);
             // 
-            // label16
+            // engaged3
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(299, 9);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(54, 17);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Vitesse";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
+            this.engaged3.AutoSize = true;
+            this.engaged3.Enabled = false;
+            this.engaged3.Location = new System.Drawing.Point(467, 152);
+            this.engaged3.Name = "engaged3";
+            this.engaged3.Size = new System.Drawing.Size(18, 17);
+            this.engaged3.TabIndex = 23;
+            this.engaged3.UseVisualStyleBackColor = true;
+            this.engaged3.CheckedChanged += new System.EventHandler(this.engaged3_CheckedChanged_2);
             // 
-            // velocity_num1
+            // engaged2
             // 
-            this.velocity_num1.Location = new System.Drawing.Point(266, 29);
-            this.velocity_num1.Name = "velocity_num1";
-            this.velocity_num1.Size = new System.Drawing.Size(120, 22);
-            this.velocity_num1.TabIndex = 3;
-            this.velocity_num1.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged_1);
+            this.engaged2.AutoSize = true;
+            this.engaged2.Enabled = false;
+            this.engaged2.Location = new System.Drawing.Point(467, 91);
+            this.engaged2.Name = "engaged2";
+            this.engaged2.Size = new System.Drawing.Size(18, 17);
+            this.engaged2.TabIndex = 22;
+            this.engaged2.UseVisualStyleBackColor = true;
+            this.engaged2.CheckedChanged += new System.EventHandler(this.engaged2_CheckedChanged);
             // 
-            // velocity_num2
+            // engaged1
             // 
-            this.velocity_num2.Location = new System.Drawing.Point(266, 91);
-            this.velocity_num2.Name = "velocity_num2";
-            this.velocity_num2.Size = new System.Drawing.Size(120, 22);
-            this.velocity_num2.TabIndex = 7;
-            this.velocity_num2.ValueChanged += new System.EventHandler(this.velocity_num2_ValueChanged);
+            this.engaged1.AutoSize = true;
+            this.engaged1.Enabled = false;
+            this.engaged1.Location = new System.Drawing.Point(467, 29);
+            this.engaged1.Name = "engaged1";
+            this.engaged1.Size = new System.Drawing.Size(18, 17);
+            this.engaged1.TabIndex = 21;
+            this.engaged1.UseVisualStyleBackColor = true;
+            this.engaged1.CheckedChanged += new System.EventHandler(this.engaged1_CheckedChanged_1);
             // 
-            // step_num2
+            // label22
             // 
-            this.step_num2.Enabled = false;
-            this.step_num2.Location = new System.Drawing.Point(85, 91);
-            this.step_num2.Name = "step_num2";
-            this.step_num2.Size = new System.Drawing.Size(120, 22);
-            this.step_num2.TabIndex = 6;
-            this.step_num2.ValueChanged += new System.EventHandler(this.step_num2_ValueChanged);
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(444, 9);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(62, 17);
+            this.label22.TabIndex = 20;
+            this.label22.Text = "Engager";
             // 
-            // label17
+            // velocity_num6
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(29, 91);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(27, 17);
-            this.label17.TabIndex = 5;
-            this.label17.Text = "M2";
+            this.velocity_num6.Location = new System.Drawing.Point(266, 338);
+            this.velocity_num6.Name = "velocity_num6";
+            this.velocity_num6.Size = new System.Drawing.Size(120, 22);
+            this.velocity_num6.TabIndex = 19;
+            this.velocity_num6.ValueChanged += new System.EventHandler(this.velocity_num6_ValueChanged);
             // 
-            // velocity_num3
+            // step_num6
             // 
-            this.velocity_num3.Location = new System.Drawing.Point(266, 152);
-            this.velocity_num3.Name = "velocity_num3";
-            this.velocity_num3.Size = new System.Drawing.Size(120, 22);
-            this.velocity_num3.TabIndex = 10;
-            this.velocity_num3.ValueChanged += new System.EventHandler(this.velocity_num3_ValueChanged);
+            this.step_num6.Enabled = false;
+            this.step_num6.Location = new System.Drawing.Point(85, 338);
+            this.step_num6.Name = "step_num6";
+            this.step_num6.Size = new System.Drawing.Size(120, 22);
+            this.step_num6.TabIndex = 18;
+            this.step_num6.ValueChanged += new System.EventHandler(this.step_num6_ValueChanged);
             // 
-            // step_num3
+            // label21
             // 
-            this.step_num3.Enabled = false;
-            this.step_num3.Location = new System.Drawing.Point(85, 152);
-            this.step_num3.Name = "step_num3";
-            this.step_num3.Size = new System.Drawing.Size(120, 22);
-            this.step_num3.TabIndex = 9;
-            this.step_num3.ValueChanged += new System.EventHandler(this.step_num3_ValueChanged);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(29, 152);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(27, 17);
-            this.label18.TabIndex = 8;
-            this.label18.Text = "M3";
-            // 
-            // velocity_num4
-            // 
-            this.velocity_num4.Location = new System.Drawing.Point(266, 215);
-            this.velocity_num4.Name = "velocity_num4";
-            this.velocity_num4.Size = new System.Drawing.Size(120, 22);
-            this.velocity_num4.TabIndex = 13;
-            this.velocity_num4.ValueChanged += new System.EventHandler(this.velocity_num4_ValueChanged);
-            // 
-            // step_num4
-            // 
-            this.step_num4.Enabled = false;
-            this.step_num4.Location = new System.Drawing.Point(85, 215);
-            this.step_num4.Name = "step_num4";
-            this.step_num4.Size = new System.Drawing.Size(120, 22);
-            this.step_num4.TabIndex = 12;
-            this.step_num4.ValueChanged += new System.EventHandler(this.step_num4_ValueChanged);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(29, 215);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(27, 17);
-            this.label19.TabIndex = 11;
-            this.label19.Text = "M4";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(29, 338);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(27, 17);
+            this.label21.TabIndex = 17;
+            this.label21.Text = "M6";
             // 
             // velocity_num5
             // 
@@ -1015,31 +1006,129 @@
             this.label20.TabIndex = 14;
             this.label20.Text = "M5";
             // 
-            // velocity_num6
+            // velocity_num4
             // 
-            this.velocity_num6.Location = new System.Drawing.Point(266, 338);
-            this.velocity_num6.Name = "velocity_num6";
-            this.velocity_num6.Size = new System.Drawing.Size(120, 22);
-            this.velocity_num6.TabIndex = 19;
-            this.velocity_num6.ValueChanged += new System.EventHandler(this.velocity_num6_ValueChanged);
+            this.velocity_num4.Location = new System.Drawing.Point(266, 215);
+            this.velocity_num4.Name = "velocity_num4";
+            this.velocity_num4.Size = new System.Drawing.Size(120, 22);
+            this.velocity_num4.TabIndex = 13;
+            this.velocity_num4.ValueChanged += new System.EventHandler(this.velocity_num4_ValueChanged);
             // 
-            // step_num6
+            // step_num4
             // 
-            this.step_num6.Enabled = false;
-            this.step_num6.Location = new System.Drawing.Point(85, 338);
-            this.step_num6.Name = "step_num6";
-            this.step_num6.Size = new System.Drawing.Size(120, 22);
-            this.step_num6.TabIndex = 18;
-            this.step_num6.ValueChanged += new System.EventHandler(this.step_num6_ValueChanged);
+            this.step_num4.Enabled = false;
+            this.step_num4.Location = new System.Drawing.Point(85, 215);
+            this.step_num4.Name = "step_num4";
+            this.step_num4.Size = new System.Drawing.Size(120, 22);
+            this.step_num4.TabIndex = 12;
+            this.step_num4.ValueChanged += new System.EventHandler(this.step_num4_ValueChanged);
             // 
-            // label21
+            // label19
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(29, 338);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(27, 17);
-            this.label21.TabIndex = 17;
-            this.label21.Text = "M6";
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(29, 215);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(27, 17);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "M4";
+            // 
+            // velocity_num3
+            // 
+            this.velocity_num3.Location = new System.Drawing.Point(266, 152);
+            this.velocity_num3.Name = "velocity_num3";
+            this.velocity_num3.Size = new System.Drawing.Size(120, 22);
+            this.velocity_num3.TabIndex = 10;
+            this.velocity_num3.ValueChanged += new System.EventHandler(this.velocity_num3_ValueChanged);
+            // 
+            // step_num3
+            // 
+            this.step_num3.Enabled = false;
+            this.step_num3.Location = new System.Drawing.Point(85, 152);
+            this.step_num3.Name = "step_num3";
+            this.step_num3.Size = new System.Drawing.Size(120, 22);
+            this.step_num3.TabIndex = 9;
+            this.step_num3.ValueChanged += new System.EventHandler(this.step_num3_ValueChanged);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(29, 152);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(27, 17);
+            this.label18.TabIndex = 8;
+            this.label18.Text = "M3";
+            // 
+            // velocity_num2
+            // 
+            this.velocity_num2.Location = new System.Drawing.Point(266, 91);
+            this.velocity_num2.Name = "velocity_num2";
+            this.velocity_num2.Size = new System.Drawing.Size(120, 22);
+            this.velocity_num2.TabIndex = 7;
+            this.velocity_num2.ValueChanged += new System.EventHandler(this.velocity_num2_ValueChanged);
+            // 
+            // step_num2
+            // 
+            this.step_num2.Enabled = false;
+            this.step_num2.Location = new System.Drawing.Point(85, 91);
+            this.step_num2.Name = "step_num2";
+            this.step_num2.Size = new System.Drawing.Size(120, 22);
+            this.step_num2.TabIndex = 6;
+            this.step_num2.ValueChanged += new System.EventHandler(this.step_num2_ValueChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(29, 91);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(27, 17);
+            this.label17.TabIndex = 5;
+            this.label17.Text = "M2";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(299, 9);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(54, 17);
+            this.label16.TabIndex = 4;
+            this.label16.Text = "Vitesse";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // velocity_num1
+            // 
+            this.velocity_num1.Location = new System.Drawing.Point(266, 29);
+            this.velocity_num1.Name = "velocity_num1";
+            this.velocity_num1.Size = new System.Drawing.Size(120, 22);
+            this.velocity_num1.TabIndex = 3;
+            this.velocity_num1.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged_1);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(128, 9);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(32, 17);
+            this.label15.TabIndex = 2;
+            this.label15.Text = "Pas";
+            // 
+            // step_num1
+            // 
+            this.step_num1.Enabled = false;
+            this.step_num1.Location = new System.Drawing.Point(85, 29);
+            this.step_num1.Name = "step_num1";
+            this.step_num1.Size = new System.Drawing.Size(120, 22);
+            this.step_num1.TabIndex = 1;
+            this.step_num1.ValueChanged += new System.EventHandler(this.step_num1_ValueChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(29, 29);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(27, 17);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "M1";
+            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // Form1
             // 
@@ -1084,18 +1173,18 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.velocity_num5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.step_num5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.velocity_num6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.step_num6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.velocity_num1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.step_num1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1184,5 +1273,12 @@
         private System.Windows.Forms.NumericUpDown velocity_num2;
         private System.Windows.Forms.NumericUpDown step_num2;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.CheckBox engaged1;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.CheckBox engaged6;
+        private System.Windows.Forms.CheckBox engaged5;
+        private System.Windows.Forms.CheckBox engaged4;
+        private System.Windows.Forms.CheckBox engaged3;
+        private System.Windows.Forms.CheckBox engaged2;
     }
 }

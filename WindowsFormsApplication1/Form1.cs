@@ -162,7 +162,6 @@ namespace WindowsFormsApplication1
             }
             else
             {
-                steppers.RemoveAt(3);
                 for (int i = 4; i < 6; i++)
                 {
                     checkBoxes[i].Enabled = false;
@@ -263,40 +262,40 @@ namespace WindowsFormsApplication1
         private void go_button_Click(object sender, EventArgs e)
         {
             if (!Dummy_check.Checked)
-            {
+            {//si on utilise des moteurs
                 steppers = new List<MyStepper>();
-                List<int> i_fail = new List<int>();
+                //List<int> i_fail = new List<int>();
                 for (int i = 0; checkBoxes[i].Checked; i++)
                 {
                     steppers.Add(new MyStepper((int)lengths[i].Value, paths[i].Text));
-                    lengths[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
+                    /*lengths[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
                     Mij[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
                     paths[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
                     int timer = 0;
                     while (!steppers[i].isAttached() && timer <= 1000)
-                    {
+                    {//on attend que le moteur i s'attache
                         System.Threading.Thread.Sleep(2);
                         timer++;
                     }
                     if (timer <= 1000)
-                    {
+                    {//si ça a marché on met les cases correspondantes en vert
                         lengths[i].BackColor = Color.FromKnownColor(KnownColor.Green);
                         Mij[i].BackColor = Color.FromKnownColor(KnownColor.Green);
                         paths[i].BackColor = Color.FromKnownColor(KnownColor.Green);
                     }
                     else
-                    {
+                    {//sinon on mémorise l'index du moteurdans i_fail et on affiche en rouge
                         i_fail.Add(i);
                         lengths[i].BackColor = Color.FromKnownColor(KnownColor.Red);
                         Mij[i].BackColor = Color.FromKnownColor(KnownColor.Red);
                         paths[i].BackColor = Color.FromKnownColor(KnownColor.Red);
-                    }
+                    }*/
 
                 }
-                foreach (int i in i_fail)
-                {
+                /*foreach (int i in i_fail)
+                {//on viens checker si les moteurs en échec on finalement réussi à s'attacher
                     if (steppers[i].isAttached())
-                    {
+                    {//si ça a finalement marché, on affiche en vert et on enlève l'index du moteur de i_fail
                         lengths[i].BackColor = Color.FromKnownColor(KnownColor.Green);
                         Mij[i].BackColor = Color.FromKnownColor(KnownColor.Green);
                         paths[i].BackColor = Color.FromKnownColor(KnownColor.Green);
@@ -304,16 +303,17 @@ namespace WindowsFormsApplication1
                     }
                 }
 
-                if (i_fail.Count <= 0)
-                {
-                    stepper_handler = new Stepper_Handler(steppers, this);
-                    stepper_handler.run();
-                }
-                else { System.Threading.Thread.Sleep(1000); }
+                //si i_fail est vide on est bon, on peut lancer les moteurs
+                
+            else
+            {//sinon pour l'instant on attend (TODO gerer l'erreur)
+                System.Threading.Thread.Sleep(1000);
+            }*/
+            stepper_handler = new Stepper_Handler(steppers, this);
+            stepper_handler.run();
             }
             else
-            {
-
+            {//si on teste juste le programme sans moteurs (mode dummy)
                 dummy_steppers = new List<MyDummyStepper>();
                 for (int i = 0; checkBoxes[i].Checked; i++)
                 {

@@ -690,6 +690,7 @@
             // 
             // dt_num
             // 
+            this.dt_num.DecimalPlaces = 3;
             this.dt_num.Location = new System.Drawing.Point(43, 364);
             this.dt_num.Name = "dt_num";
             this.dt_num.Size = new System.Drawing.Size(120, 22);

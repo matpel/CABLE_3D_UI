@@ -98,7 +98,7 @@ namespace Move_cable
             string[] lines = System.IO.File.ReadAllLines(Path);
             foreach (string line in lines)
             {
-                liste.Add(Convert.ToDouble(line.Replace(',', '.')));
+                liste.Add(Convert.ToDouble(line.Replace('.', ',')));
             }
             N_step = liste.Count;
 

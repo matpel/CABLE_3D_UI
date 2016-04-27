@@ -85,6 +85,8 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.Dummy_check = new System.Windows.Forms.CheckBox();
+            this.dt_num = new System.Windows.Forms.NumericUpDown();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.length1_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length2_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length3_wid)).BeginInit();
@@ -112,6 +114,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.P0z)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0y)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0x)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_num)).BeginInit();
             this.SuspendLayout();
             // 
             // root_path_wid
@@ -685,11 +688,36 @@
             this.Dummy_check.UseVisualStyleBackColor = true;
             this.Dummy_check.CheckedChanged += new System.EventHandler(this.Dummy_check_CheckedChanged);
             // 
+            // dt_num
+            // 
+            this.dt_num.Location = new System.Drawing.Point(43, 364);
+            this.dt_num.Name = "dt_num";
+            this.dt_num.Size = new System.Drawing.Size(120, 22);
+            this.dt_num.TabIndex = 75;
+            this.dt_num.Value = new decimal(new int[] {
+            7,
+            0,
+            0,
+            131072});
+            this.dt_num.ValueChanged += new System.EventHandler(this.dt_num_ValueChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(13, 366);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(20, 17);
+            this.label13.TabIndex = 76;
+            this.label13.Text = "dt";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(547, 477);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.dt_num);
             this.Controls.Add(this.Dummy_check);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -777,6 +805,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.P0z)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0y)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P0x)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dt_num)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -841,5 +870,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox Dummy_check;
+        private System.Windows.Forms.NumericUpDown dt_num;
+        private System.Windows.Forms.Label label13;
     }
 }

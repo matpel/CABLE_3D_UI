@@ -15,13 +15,13 @@ namespace WindowsFormsApplication1
     {
 
         private List<TextBox> paths;
-        private String rootPath = @"D:\Projets\Departement\Trajectoire";
+        private String rootPath = @"D:\Departement\Trajectoire";
         private List<NumericUpDown> lengths;
         private List<CheckBox> checkBoxes;
         private List<NumericUpDown> Mij;
         private int step;
 
-
+        private double dt = 0.07;
         private List<MyStepper> steppers;
         private List<MyDummyStepper> dummy_steppers;
         private Stepper_Handler stepper_handler;
@@ -48,6 +48,7 @@ namespace WindowsFormsApplication1
             step = 0;
 
             root_path_wid.Text = rootPath;
+
             List<String> lines;
             if (!System.IO.File.Exists(rootPath + @"\input.txt"))
                 lines = new List<String> { "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0", "0,0,0" };
@@ -97,7 +98,13 @@ namespace WindowsFormsApplication1
             }
 
         }
+        /*
+        private void dt_wid_TextChanged(object sender, EventArgs e)
+        {
+            dt = Convert.ToDouble(dt_wid.Text);
 
+        }
+        */
         private void path1_wid_TextChanged(object sender, EventArgs e)
         {
 
@@ -267,7 +274,7 @@ namespace WindowsFormsApplication1
                 //List<int> i_fail = new List<int>();
                 for (int i = 0; checkBoxes[i].Checked; i++)
                 {
-                    steppers.Add(new MyStepper((int)lengths[i].Value, paths[i].Text));
+                    steppers.Add(new MyStepper((int)lengths[i].Value, paths[i].Text, dt));
                     /*lengths[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
                     Mij[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
                     paths[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
@@ -582,7 +589,10 @@ namespace WindowsFormsApplication1
         {
 
         }
-
+        private void dt_num_ValueChanged(object sender, EventArgs e)
+        {
+            dt = Convert.ToDouble(dt_num.Value);
+        }
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -649,6 +659,11 @@ namespace WindowsFormsApplication1
         }
 
         private void Dummy_check_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
         {
 
         }

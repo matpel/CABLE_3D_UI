@@ -10,7 +10,7 @@ namespace Move_cable
     {
         const double pas = 2.5; //Pas de la vis sans fin en mm
         const int R = 10; // Rayon de la vis sans fin en mm
-        public static double dt = 0.07; // Pas de temps donne par GrassHoper en sec.
+        public double dt; // Pas de temps donne par GrassHoper en sec.
         public static int N_step;
         public Boolean stopped;
         public List<double> liste;
@@ -25,7 +25,7 @@ namespace Move_cable
         public double Length;
         public Boolean Error_timestamp = false;
 
-        public MyStepper(int Length,String Path="",int Initial_position = 0)
+        public MyStepper(int Length,String Path="", double dt = 0.07, int Initial_position = 0)
         {
             this.Path = Path;
             this.Initial_position = Initial_position;
@@ -33,6 +33,7 @@ namespace Move_cable
             stepper = new Stepper();
             liste = new List<double>();
             tourne = true;
+            this.dt = dt;
         }
         public void load()
         {
@@ -120,7 +121,7 @@ namespace Move_cable
         }
         public void close()
         {
-            //stepper.steppers[0].Engaged = false;
+            stepper.steppers[0].Engaged = false;
             //close the Stepper object
             stepper.close();
             //set the object to null to get it out of memory

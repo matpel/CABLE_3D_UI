@@ -265,12 +265,51 @@ namespace WindowsFormsApplication1
             if (!Dummy_check.Checked)
             {
                 steppers = new List<MyStepper>();
+                List<int> i_fail = new List<int>();
                 for (int i = 0; checkBoxes[i].Checked; i++)
                 {
                     steppers.Add(new MyStepper((int)lengths[i].Value, paths[i].Text));
+                    lengths[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
+                    Mij[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
+                    paths[i].BackColor = Color.FromKnownColor(KnownColor.Yellow);
+                    int timer = 0;
+                    while (!steppers[i].isAttached() && timer <= 1000)
+                    {
+                        System.Threading.Thread.Sleep(2);
+                        timer++;
+                    }
+                    if (timer <= 1000)
+                    {
+                        lengths[i].BackColor = Color.FromKnownColor(KnownColor.Green);
+                        Mij[i].BackColor = Color.FromKnownColor(KnownColor.Green);
+                        paths[i].BackColor = Color.FromKnownColor(KnownColor.Green);
+                    }
+                    else
+                    {
+                        i_fail.Add(i);
+                        lengths[i].BackColor = Color.FromKnownColor(KnownColor.Red);
+                        Mij[i].BackColor = Color.FromKnownColor(KnownColor.Red);
+                        paths[i].BackColor = Color.FromKnownColor(KnownColor.Red);
+                    }
+
                 }
-                stepper_handler = new Stepper_Handler(steppers, this);
-                stepper_handler.run();
+                foreach (int i in i_fail)
+                {
+                    if (steppers[i].isAttached())
+                    {
+                        lengths[i].BackColor = Color.FromKnownColor(KnownColor.Green);
+                        Mij[i].BackColor = Color.FromKnownColor(KnownColor.Green);
+                        paths[i].BackColor = Color.FromKnownColor(KnownColor.Green);
+                        i_fail.Remove(i);
+                    }
+                }
+
+                if (i_fail.Count <= 0)
+                {
+                    stepper_handler = new Stepper_Handler(steppers, this);
+                    stepper_handler.run();
+                }
+                else { System.Threading.Thread.Sleep(1000); }
             }
             else
             {

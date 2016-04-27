@@ -45,7 +45,7 @@ namespace Move_cable
                 stepper.Detach += new DetachEventHandler(stepper_Detach);
                 stepper.Error += new ErrorEventHandler(stepper_Error);
                 stepper.open();
-           
+                           
                 stepper.waitForAttachment();
 
                 //Acceleration at Max

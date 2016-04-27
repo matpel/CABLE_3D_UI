@@ -15,7 +15,7 @@ namespace WindowsFormsApplication1
     {
 
         private List<TextBox> paths;
-        private String rootPath = @"D:\Departement\Trajectoire";
+        private String rootPath = @"D:\Projets\Departement\Trajectoire";
         private List<NumericUpDown> lengths;
         private List<CheckBox> checkBoxes;
         private List<NumericUpDown> Mij;

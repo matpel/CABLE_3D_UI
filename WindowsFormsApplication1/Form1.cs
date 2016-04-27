@@ -229,6 +229,7 @@ namespace WindowsFormsApplication1
                 checkBox2.Enabled = true;
                 path2_wid.Enabled = true;
                 length2_wid.Enabled = true;
+                step_num1.Enabled = true;
             }
             else
             {
@@ -664,6 +665,76 @@ namespace WindowsFormsApplication1
         }
 
         private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown2_ValueChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void step_num1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void velocity_num2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void velocity_num3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void velocity_num4_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void velocity_num5_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void velocity_num6_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void step_num2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void step_num3_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void step_num4_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void step_num5_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void step_num6_ValueChanged(object sender, EventArgs e)
         {
 
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.root_path_wid = new System.Windows.Forms.TextBox();
             this.path1_wid = new System.Windows.Forms.TextBox();
             this.path2_wid = new System.Windows.Forms.TextBox();
@@ -117,6 +118,18 @@
             this.label15 = new System.Windows.Forms.Label();
             this.step_num1 = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
+            this.checked1 = new System.Windows.Forms.PictureBox();
+            this.checked2 = new System.Windows.Forms.PictureBox();
+            this.checked3 = new System.Windows.Forms.PictureBox();
+            this.checked4 = new System.Windows.Forms.PictureBox();
+            this.checked5 = new System.Windows.Forms.PictureBox();
+            this.checked6 = new System.Windows.Forms.PictureBox();
+            this.unchecked6 = new System.Windows.Forms.PictureBox();
+            this.unchecked5 = new System.Windows.Forms.PictureBox();
+            this.unchecked4 = new System.Windows.Forms.PictureBox();
+            this.unchecked3 = new System.Windows.Forms.PictureBox();
+            this.unchecked2 = new System.Windows.Forms.PictureBox();
+            this.unchecked1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.length1_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length2_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length3_wid)).BeginInit();
@@ -160,6 +173,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.step_num2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.velocity_num1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.step_num1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked1)).BeginInit();
             this.SuspendLayout();
             // 
             // root_path_wid
@@ -770,7 +795,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(547, 538);
+            this.tabControl1.Size = new System.Drawing.Size(553, 538);
             this.tabControl1.TabIndex = 77;
             // 
             // tabPage1
@@ -844,6 +869,18 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.unchecked6);
+            this.tabPage2.Controls.Add(this.unchecked5);
+            this.tabPage2.Controls.Add(this.unchecked4);
+            this.tabPage2.Controls.Add(this.unchecked3);
+            this.tabPage2.Controls.Add(this.unchecked2);
+            this.tabPage2.Controls.Add(this.unchecked1);
+            this.tabPage2.Controls.Add(this.checked6);
+            this.tabPage2.Controls.Add(this.checked5);
+            this.tabPage2.Controls.Add(this.checked4);
+            this.tabPage2.Controls.Add(this.checked3);
+            this.tabPage2.Controls.Add(this.checked2);
+            this.tabPage2.Controls.Add(this.checked1);
             this.tabPage2.Controls.Add(this.engaged6);
             this.tabPage2.Controls.Add(this.engaged5);
             this.tabPage2.Controls.Add(this.engaged4);
@@ -874,10 +911,11 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(539, 509);
+            this.tabPage2.Size = new System.Drawing.Size(545, 509);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Calibration";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // engaged6
             // 
@@ -1130,6 +1168,126 @@
             this.label14.Text = "M1";
             this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
+            // checked1
+            // 
+            this.checked1.Image = ((System.Drawing.Image)(resources.GetObject("checked1.Image")));
+            this.checked1.Location = new System.Drawing.Point(491, 25);
+            this.checked1.Name = "checked1";
+            this.checked1.Size = new System.Drawing.Size(31, 26);
+            this.checked1.TabIndex = 27;
+            this.checked1.TabStop = false;
+            this.checked1.Visible = false;
+            // 
+            // checked2
+            // 
+            this.checked2.Image = ((System.Drawing.Image)(resources.GetObject("checked2.Image")));
+            this.checked2.Location = new System.Drawing.Point(491, 82);
+            this.checked2.Name = "checked2";
+            this.checked2.Size = new System.Drawing.Size(31, 26);
+            this.checked2.TabIndex = 28;
+            this.checked2.TabStop = false;
+            this.checked2.Visible = false;
+            // 
+            // checked3
+            // 
+            this.checked3.Image = ((System.Drawing.Image)(resources.GetObject("checked3.Image")));
+            this.checked3.Location = new System.Drawing.Point(491, 143);
+            this.checked3.Name = "checked3";
+            this.checked3.Size = new System.Drawing.Size(31, 26);
+            this.checked3.TabIndex = 29;
+            this.checked3.TabStop = false;
+            this.checked3.Visible = false;
+            // 
+            // checked4
+            // 
+            this.checked4.Image = ((System.Drawing.Image)(resources.GetObject("checked4.Image")));
+            this.checked4.Location = new System.Drawing.Point(491, 211);
+            this.checked4.Name = "checked4";
+            this.checked4.Size = new System.Drawing.Size(31, 26);
+            this.checked4.TabIndex = 30;
+            this.checked4.TabStop = false;
+            this.checked4.Visible = false;
+            // 
+            // checked5
+            // 
+            this.checked5.Image = ((System.Drawing.Image)(resources.GetObject("checked5.Image")));
+            this.checked5.Location = new System.Drawing.Point(491, 273);
+            this.checked5.Name = "checked5";
+            this.checked5.Size = new System.Drawing.Size(31, 26);
+            this.checked5.TabIndex = 31;
+            this.checked5.TabStop = false;
+            this.checked5.Visible = false;
+            // 
+            // checked6
+            // 
+            this.checked6.Image = ((System.Drawing.Image)(resources.GetObject("checked6.Image")));
+            this.checked6.Location = new System.Drawing.Point(491, 334);
+            this.checked6.Name = "checked6";
+            this.checked6.Size = new System.Drawing.Size(31, 26);
+            this.checked6.TabIndex = 32;
+            this.checked6.TabStop = false;
+            this.checked6.Visible = false;
+            // 
+            // unchecked6
+            // 
+            this.unchecked6.Image = ((System.Drawing.Image)(resources.GetObject("unchecked6.Image")));
+            this.unchecked6.InitialImage = ((System.Drawing.Image)(resources.GetObject("unchecked6.InitialImage")));
+            this.unchecked6.Location = new System.Drawing.Point(502, 334);
+            this.unchecked6.Name = "unchecked6";
+            this.unchecked6.Size = new System.Drawing.Size(34, 39);
+            this.unchecked6.TabIndex = 38;
+            this.unchecked6.TabStop = false;
+            // 
+            // unchecked5
+            // 
+            this.unchecked5.Image = ((System.Drawing.Image)(resources.GetObject("unchecked5.Image")));
+            this.unchecked5.InitialImage = ((System.Drawing.Image)(resources.GetObject("unchecked5.InitialImage")));
+            this.unchecked5.Location = new System.Drawing.Point(502, 273);
+            this.unchecked5.Name = "unchecked5";
+            this.unchecked5.Size = new System.Drawing.Size(31, 35);
+            this.unchecked5.TabIndex = 37;
+            this.unchecked5.TabStop = false;
+            // 
+            // unchecked4
+            // 
+            this.unchecked4.Image = ((System.Drawing.Image)(resources.GetObject("unchecked4.Image")));
+            this.unchecked4.InitialImage = ((System.Drawing.Image)(resources.GetObject("unchecked4.InitialImage")));
+            this.unchecked4.Location = new System.Drawing.Point(502, 211);
+            this.unchecked4.Name = "unchecked4";
+            this.unchecked4.Size = new System.Drawing.Size(31, 39);
+            this.unchecked4.TabIndex = 36;
+            this.unchecked4.TabStop = false;
+            // 
+            // unchecked3
+            // 
+            this.unchecked3.Image = ((System.Drawing.Image)(resources.GetObject("unchecked3.Image")));
+            this.unchecked3.InitialImage = ((System.Drawing.Image)(resources.GetObject("unchecked3.InitialImage")));
+            this.unchecked3.Location = new System.Drawing.Point(502, 143);
+            this.unchecked3.Name = "unchecked3";
+            this.unchecked3.Size = new System.Drawing.Size(34, 47);
+            this.unchecked3.TabIndex = 35;
+            this.unchecked3.TabStop = false;
+            // 
+            // unchecked2
+            // 
+            this.unchecked2.Image = ((System.Drawing.Image)(resources.GetObject("unchecked2.Image")));
+            this.unchecked2.InitialImage = ((System.Drawing.Image)(resources.GetObject("unchecked2.InitialImage")));
+            this.unchecked2.Location = new System.Drawing.Point(502, 82);
+            this.unchecked2.Name = "unchecked2";
+            this.unchecked2.Size = new System.Drawing.Size(31, 43);
+            this.unchecked2.TabIndex = 34;
+            this.unchecked2.TabStop = false;
+            // 
+            // unchecked1
+            // 
+            this.unchecked1.Image = ((System.Drawing.Image)(resources.GetObject("unchecked1.Image")));
+            this.unchecked1.InitialImage = ((System.Drawing.Image)(resources.GetObject("unchecked1.InitialImage")));
+            this.unchecked1.Location = new System.Drawing.Point(502, 25);
+            this.unchecked1.Name = "unchecked1";
+            this.unchecked1.Size = new System.Drawing.Size(34, 37);
+            this.unchecked1.TabIndex = 33;
+            this.unchecked1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1185,6 +1343,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.step_num2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.velocity_num1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.step_num1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.checked6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unchecked1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1280,5 +1450,17 @@
         private System.Windows.Forms.CheckBox engaged4;
         private System.Windows.Forms.CheckBox engaged3;
         private System.Windows.Forms.CheckBox engaged2;
+        private System.Windows.Forms.PictureBox checked1;
+        private System.Windows.Forms.PictureBox checked6;
+        private System.Windows.Forms.PictureBox checked5;
+        private System.Windows.Forms.PictureBox checked4;
+        private System.Windows.Forms.PictureBox checked3;
+        private System.Windows.Forms.PictureBox checked2;
+        private System.Windows.Forms.PictureBox unchecked6;
+        private System.Windows.Forms.PictureBox unchecked5;
+        private System.Windows.Forms.PictureBox unchecked4;
+        private System.Windows.Forms.PictureBox unchecked3;
+        private System.Windows.Forms.PictureBox unchecked2;
+        private System.Windows.Forms.PictureBox unchecked1;
     }
 }

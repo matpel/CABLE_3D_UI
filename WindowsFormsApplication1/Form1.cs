@@ -19,6 +19,7 @@ namespace WindowsFormsApplication1
         private List<NumericUpDown> lengths;
         private List<CheckBox> checkBoxes;
         private List<NumericUpDown> Mij;
+        private List<CheckBox> listEngaged;
         private int step;
 
         private double dt = 0.07;
@@ -26,7 +27,7 @@ namespace WindowsFormsApplication1
         private List<MyDummyStepper> dummy_steppers;
         private Stepper_Handler stepper_handler;
         private DummyStepper_Handler dummyStepper_Handler;
-
+        private List<MyStepper> s_calibrated;
         public Form1()
         {
             InitializeComponent();
@@ -39,12 +40,16 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            s_calibrated = new List<MyStepper>();
+            for(int i = 0; i<6; i++)
+            {
+                s_calibrated.Add(new MyStepper(100));
+            }
             paths = new List<TextBox> { path1_wid, path2_wid, path3_wid, path4_wid, path5_wid, path6_wid };
             checkBoxes = new List<CheckBox> { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
             lengths = new List<NumericUpDown> { length1_wid, length2_wid, length3_wid, length4_wid, length5_wid, length6_wid };
             Mij = new List<NumericUpDown> { M1x, M1y, M1z, M2x, M2y, M2z, M3x, M3y, M3z, M4x, M4y, M4z, M5x, M5y, M5z, M6x, M6y, M6z, P0x, P0y, P0z };
-
+            listEngaged = new List<CheckBox> { engaged1, engaged2, engaged3, engaged4, engaged5, engaged6 };
             step = 0;
 
             root_path_wid.Text = rootPath;
@@ -136,6 +141,13 @@ namespace WindowsFormsApplication1
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
+            if(checkBox6.Checked)
+            {
+                engaged6.Enabled = true;
+            }
+            else {
+                engaged6.Enabled = false;
+            }
 
         }
 
@@ -146,15 +158,18 @@ namespace WindowsFormsApplication1
                 checkBox6.Enabled = true;
                 path6_wid.Enabled = true;
                 length6_wid.Enabled = true;
+                engaged5.Enabled = true;
             }
             else
             {
+                engaged5.Enabled = false;
                 for (int i = 5; i < 6; i++)
                 {
                     checkBoxes[i].Enabled = false;
                     checkBoxes[i].Checked = false;
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
+                    listEngaged[i].Enabled = false;
                 }
             }
         }
@@ -166,15 +181,18 @@ namespace WindowsFormsApplication1
                 checkBox5.Enabled = true;
                 path5_wid.Enabled = true;
                 length5_wid.Enabled = true;
+                engaged4.Enabled = true;
             }
             else
             {
+                engaged4.Enabled = false;
                 for (int i = 4; i < 6; i++)
                 {
                     checkBoxes[i].Enabled = false;
                     checkBoxes[i].Checked = false;
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
+                    listEngaged[i].Enabled = false;
                 }
             }
 
@@ -187,15 +205,18 @@ namespace WindowsFormsApplication1
                 checkBox4.Enabled = true;
                 path4_wid.Enabled = true;
                 length4_wid.Enabled = true;
+                engaged3.Enabled = true;
             }
             else
             {
+                engaged3.Enabled = false;
                 for (int i = 3; i < 6; i++)
                 {
                     checkBoxes[i].Enabled = false;
                     checkBoxes[i].Checked = false;
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
+                    listEngaged[i].Enabled = false;
                 }
             }
 
@@ -208,15 +229,18 @@ namespace WindowsFormsApplication1
                 checkBox3.Enabled = true;
                 path3_wid.Enabled = true;
                 length3_wid.Enabled = true;
+                engaged2.Enabled = true;
             }
             else
             {
+                engaged2.Enabled = false;
                 for (int i = 2; i < 6; i++)
                 {
                     checkBoxes[i].Enabled = false;
                     checkBoxes[i].Checked = false;
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
+                    listEngaged[i].Enabled = false;
                 }
             }
 
@@ -229,16 +253,18 @@ namespace WindowsFormsApplication1
                 checkBox2.Enabled = true;
                 path2_wid.Enabled = true;
                 length2_wid.Enabled = true;
-                step_num1.Enabled = true;
+                engaged1.Enabled = true;
             }
             else
             {
+                engaged1.Enabled = false;
                 for (int i = 1; i < 6; i++)
                 {
                     checkBoxes[i].Enabled = false;
                     checkBoxes[i].Checked = false;
                     paths[i].Enabled = false;
                     lengths[i].Enabled = false;
+                    listEngaged[i].Enabled = false;
                 }
             }
         }
@@ -741,30 +767,197 @@ namespace WindowsFormsApplication1
 
         private void engaged1_CheckedChanged_1(object sender, EventArgs e)
         {
+            if(engaged1.Checked && !(s_calibrated[0].isAttached()))
+            {
+                unchecked1.Visible = false;
+                
+                if(s_calibrated[0].load())
+                {
+                    checked1.Visible = true;
+                    step_num1.Value = s_calibrated[0].stepper.steppers[0].CurrentPosition;
+                }
+                else
+                {
+                    unchecked1.Visible = true;
+                    engaged1.Checked = false;
+                }
+                engaged1.Checked = false;
 
+            }
+            else if (s_calibrated[0].isAttached())
+            {
+                s_calibrated[0].close();
+                unchecked1.Visible = true;
+                checked1.Visible = false;
+            }
+            else
+            {
+                unchecked1.Visible = true;
+                checked1.Visible = false;
+            }
         }
 
         private void engaged2_CheckedChanged(object sender, EventArgs e)
         {
+            if (engaged2.Checked && !(s_calibrated[1].isAttached()))
+            {
+                unchecked2.Visible = false;
 
+                if (s_calibrated[1].load())
+                {
+                    checked2.Visible = true;
+                    step_num2.Value = s_calibrated[1].stepper.steppers[0].CurrentPosition;
+                }
+                else
+                {
+                    unchecked2.Visible = true;
+                    engaged2.Checked = false;
+                }
+                engaged2.Checked = false;
+
+            }
+            else if (s_calibrated[1].isAttached())
+            {
+                s_calibrated[1].close();
+                unchecked2.Visible = true;
+                checked2.Visible = false;
+            }
+            else
+            {
+                unchecked2.Visible = true;
+                checked2.Visible = false;
+            }
         }
 
         private void engaged3_CheckedChanged_2(object sender, EventArgs e)
         {
+            if (engaged3.Checked && !(s_calibrated[2].isAttached()))
+            {
+                unchecked3.Visible = false;
 
+                if (s_calibrated[2].load())
+                {
+                    checked3.Visible = true;
+                    step_num3.Value = s_calibrated[2].stepper.steppers[0].CurrentPosition;
+                }
+                else
+                {
+                    unchecked3.Visible = true;
+                    engaged3.Checked = false;
+                }
+                engaged3.Checked = false;
+
+            }
+            else if (s_calibrated[2].isAttached())
+            {
+                s_calibrated[2].close();
+                unchecked3.Visible = true;
+                checked3.Visible = false;
+            }
+            else
+            {
+                unchecked3.Visible = true;
+                checked3.Visible = false;
+            }
         }
 
         private void engaged4_CheckedChanged(object sender, EventArgs e)
         {
+            if (engaged4.Checked && !(s_calibrated[3].isAttached()))
+            {
+                unchecked4.Visible = false;
 
+                if (s_calibrated[3].load())
+                {
+                    checked4.Visible = true;
+                    step_num4.Value = s_calibrated[3].stepper.steppers[0].CurrentPosition;
+                }
+                else
+                {
+                    unchecked4.Visible = true;
+                    engaged4.Checked = false;
+                }
+                engaged4.Checked = false;
+
+            }
+            else if (s_calibrated[3].isAttached())
+            {
+                s_calibrated[3].close();
+                unchecked4.Visible = true;
+                checked4.Visible = false;
+            }
+            else
+            {
+                unchecked4.Visible = true;
+                checked4.Visible = false;
+            }
         }
 
         private void engaged6_CheckedChanged(object sender, EventArgs e)
         {
+            if (engaged6.Checked && !(s_calibrated[5].isAttached()))
+            {
+                unchecked6.Visible = false;
 
+                if (s_calibrated[5].load())
+                {
+                    checked6.Visible = true;
+                    step_num6.Value = s_calibrated[5].stepper.steppers[0].CurrentPosition;
+                }
+                else
+                {
+                    unchecked6.Visible = true;
+                    engaged6.Checked = false;
+                }
+                engaged6.Checked = false;
+
+            }
+            else if (s_calibrated[5].isAttached())
+            {
+                s_calibrated[5].close();
+                unchecked6.Visible = true;
+                checked6.Visible = false;
+            }
+            else
+            {
+                unchecked6.Visible = true;
+                checked6.Visible = false;
+            }
         }
 
         private void engaged5_CheckedChanged(object sender, EventArgs e)
+        {
+            if (engaged5.Checked && !(s_calibrated[4].isAttached()))
+            {
+                unchecked5.Visible = false;
+
+                if (s_calibrated[4].load())
+                {
+                    checked5.Visible = true;
+                    step_num5.Value = s_calibrated[4].stepper.steppers[0].CurrentPosition;
+                }
+                else
+                {
+                    unchecked5.Visible = true;
+                    engaged5.Checked = false;
+                }
+                engaged5.Checked = false;
+
+            }
+            else if (s_calibrated[4].isAttached())
+            {
+                s_calibrated[4].close();
+                unchecked5.Visible = true;
+                checked5.Visible = false;
+            }
+            else
+            {
+                unchecked5.Visible = true;
+                checked5.Visible = false;
+            }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
         {
 
         }

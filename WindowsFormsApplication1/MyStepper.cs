@@ -35,19 +35,24 @@ namespace Move_cable
             tourne = true;
             this.dt = dt;
         }
-        public void load()
+        public bool load()
         {
             try
             {
                 // Read File corresponding to Motor ID
-                load_trajectory();
+                if(Path != "")
+                {
+                    load_trajectory();
+                }
+
+                
                 //Hook the basic event handlers
                 stepper.Attach += new AttachEventHandler(stepper_Attach);
                 stepper.Detach += new DetachEventHandler(stepper_Detach);
                 stepper.Error += new ErrorEventHandler(stepper_Error);
                 stepper.open();
                            
-                stepper.waitForAttachment();
+                stepper.waitForAttachment(2000);
 
                 //Acceleration at Max
                 stepper.steppers[0].Acceleration = stepper.steppers[0].AccelerationMax; //ensure the value is between the AccelerationMin and AccelerationMax
@@ -57,15 +62,17 @@ namespace Move_cable
                 stepper.steppers[0].CurrentLimit = 1.7;
                 //stepper.steppers[0].TargetPosition = 0;
                 Goal_Position = stepper.steppers[0].TargetPosition;
-
+                return true;
             }
             catch (PhidgetException ex)
             {
                 Console.WriteLine(ex.Description);
+                return false;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return false;
             }
 
         }

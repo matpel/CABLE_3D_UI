@@ -707,62 +707,104 @@ namespace WindowsFormsApplication1
 
         private void numericUpDown2_ValueChanged_1(object sender, EventArgs e)
         {
-
+            if(engaged1.Checked)
+            {
+                s_calibrated[0].stepper.steppers[0].VelocityLimit = (int)velocity_num1.Value;
+            }
+            else { velocity_num1.Value = 100; }
         }
 
         private void step_num1_ValueChanged(object sender, EventArgs e)
         {
-
+            if(engaged1.Checked)
+            {
+                s_calibrated[0].stepper.steppers[0].TargetPosition = (int)step_num1.Value;
+            }
         }
 
         private void velocity_num2_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged2.Checked)
+            {
+                s_calibrated[1].stepper.steppers[0].VelocityLimit = (int)velocity_num2.Value;
+            }
+            else { velocity_num2.Value = 100; }
         }
 
         private void velocity_num3_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged3.Checked)
+            {
+                s_calibrated[2].stepper.steppers[0].VelocityLimit = (int)velocity_num3.Value;
+            }
+            else { velocity_num3.Value = 100; }
         }
 
         private void velocity_num4_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged4.Checked)
+            {
+                s_calibrated[3].stepper.steppers[0].VelocityLimit = (int)velocity_num4.Value;
+            }
+            else { velocity_num4.Value = 100; }
         }
 
         private void velocity_num5_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged5.Checked)
+            {
+                s_calibrated[4].stepper.steppers[0].VelocityLimit = (int)velocity_num5.Value;
+            }
+            else { velocity_num5.Value = 100; }
         }
 
         private void velocity_num6_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged6.Checked)
+            {
+                s_calibrated[5].stepper.steppers[0].VelocityLimit = (int)velocity_num6.Value;
+            }
+            else { velocity_num6.Value = 100; }
         }
 
         private void step_num2_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged2.Checked)
+            {
+                s_calibrated[1].stepper.steppers[0].TargetPosition = (int)step_num2.Value;
+            }
         }
 
         private void step_num3_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged3.Checked)
+            {
+                s_calibrated[2].stepper.steppers[0].TargetPosition = (int)step_num3.Value;
+            }
         }
 
         private void step_num4_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged4.Checked)
+            {
+                s_calibrated[3].stepper.steppers[0].TargetPosition = (int)step_num4.Value;
+            }
         }
 
         private void step_num5_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged5.Checked)
+            {
+                s_calibrated[4].stepper.steppers[0].TargetPosition = (int)step_num5.Value;
+            }
         }
 
         private void step_num6_ValueChanged(object sender, EventArgs e)
         {
-
+            if (engaged6.Checked)
+            {
+                s_calibrated[5].stepper.steppers[0].TargetPosition = (int)step_num6.Value;
+            }
         }
 
         private void engaged1_CheckedChanged_1(object sender, EventArgs e)

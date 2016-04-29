@@ -130,6 +130,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.step_num1 = new System.Windows.Forms.NumericUpDown();
             this.label14 = new System.Windows.Forms.Label();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label23 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.length1_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length2_wid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.length3_wid)).BeginInit();
@@ -185,6 +187,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.step_num2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.velocity_num1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.step_num1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.SuspendLayout();
             // 
             // root_path_wid
@@ -870,6 +873,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label23);
+            this.tabPage2.Controls.Add(this.numericUpDown1);
             this.tabPage2.Controls.Add(this.unchecked6);
             this.tabPage2.Controls.Add(this.unchecked5);
             this.tabPage2.Controls.Add(this.unchecked4);
@@ -1117,11 +1122,21 @@
             // velocity_num6
             // 
             this.velocity_num6.Location = new System.Drawing.Point(266, 338);
+            this.velocity_num6.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.velocity_num6.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.velocity_num6.Name = "velocity_num6";
             this.velocity_num6.Size = new System.Drawing.Size(120, 22);
             this.velocity_num6.TabIndex = 19;
             this.velocity_num6.Value = new decimal(new int[] {
-            100,
+            2000,
             0,
             0,
             0});
@@ -1129,7 +1144,22 @@
             // 
             // step_num6
             // 
+            this.step_num6.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.step_num6.Location = new System.Drawing.Point(85, 338);
+            this.step_num6.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.step_num6.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.step_num6.Name = "step_num6";
             this.step_num6.Size = new System.Drawing.Size(120, 22);
             this.step_num6.TabIndex = 18;
@@ -1147,11 +1177,21 @@
             // velocity_num5
             // 
             this.velocity_num5.Location = new System.Drawing.Point(266, 277);
+            this.velocity_num5.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.velocity_num5.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.velocity_num5.Name = "velocity_num5";
             this.velocity_num5.Size = new System.Drawing.Size(120, 22);
             this.velocity_num5.TabIndex = 16;
             this.velocity_num5.Value = new decimal(new int[] {
-            100,
+            2000,
             0,
             0,
             0});
@@ -1159,7 +1199,22 @@
             // 
             // step_num5
             // 
+            this.step_num5.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.step_num5.Location = new System.Drawing.Point(85, 277);
+            this.step_num5.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.step_num5.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.step_num5.Name = "step_num5";
             this.step_num5.Size = new System.Drawing.Size(120, 22);
             this.step_num5.TabIndex = 15;
@@ -1177,11 +1232,21 @@
             // velocity_num4
             // 
             this.velocity_num4.Location = new System.Drawing.Point(266, 215);
+            this.velocity_num4.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.velocity_num4.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.velocity_num4.Name = "velocity_num4";
             this.velocity_num4.Size = new System.Drawing.Size(120, 22);
             this.velocity_num4.TabIndex = 13;
             this.velocity_num4.Value = new decimal(new int[] {
-            100,
+            2000,
             0,
             0,
             0});
@@ -1189,7 +1254,22 @@
             // 
             // step_num4
             // 
+            this.step_num4.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.step_num4.Location = new System.Drawing.Point(85, 215);
+            this.step_num4.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.step_num4.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.step_num4.Name = "step_num4";
             this.step_num4.Size = new System.Drawing.Size(120, 22);
             this.step_num4.TabIndex = 12;
@@ -1207,11 +1287,21 @@
             // velocity_num3
             // 
             this.velocity_num3.Location = new System.Drawing.Point(266, 152);
+            this.velocity_num3.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.velocity_num3.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.velocity_num3.Name = "velocity_num3";
             this.velocity_num3.Size = new System.Drawing.Size(120, 22);
             this.velocity_num3.TabIndex = 10;
             this.velocity_num3.Value = new decimal(new int[] {
-            100,
+            2000,
             0,
             0,
             0});
@@ -1219,7 +1309,22 @@
             // 
             // step_num3
             // 
+            this.step_num3.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.step_num3.Location = new System.Drawing.Point(85, 152);
+            this.step_num3.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.step_num3.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.step_num3.Name = "step_num3";
             this.step_num3.Size = new System.Drawing.Size(120, 22);
             this.step_num3.TabIndex = 9;
@@ -1237,11 +1342,21 @@
             // velocity_num2
             // 
             this.velocity_num2.Location = new System.Drawing.Point(266, 91);
+            this.velocity_num2.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.velocity_num2.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.velocity_num2.Name = "velocity_num2";
             this.velocity_num2.Size = new System.Drawing.Size(120, 22);
             this.velocity_num2.TabIndex = 7;
             this.velocity_num2.Value = new decimal(new int[] {
-            100,
+            2000,
             0,
             0,
             0});
@@ -1249,7 +1364,22 @@
             // 
             // step_num2
             // 
+            this.step_num2.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.step_num2.Location = new System.Drawing.Point(85, 91);
+            this.step_num2.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.step_num2.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.step_num2.Name = "step_num2";
             this.step_num2.Size = new System.Drawing.Size(120, 22);
             this.step_num2.TabIndex = 6;
@@ -1277,11 +1407,21 @@
             // velocity_num1
             // 
             this.velocity_num1.Location = new System.Drawing.Point(266, 29);
+            this.velocity_num1.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.velocity_num1.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.velocity_num1.Name = "velocity_num1";
             this.velocity_num1.Size = new System.Drawing.Size(120, 22);
             this.velocity_num1.TabIndex = 3;
             this.velocity_num1.Value = new decimal(new int[] {
-            100,
+            2000,
             0,
             0,
             0});
@@ -1298,7 +1438,22 @@
             // 
             // step_num1
             // 
+            this.step_num1.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
             this.step_num1.Location = new System.Drawing.Point(85, 29);
+            this.step_num1.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
+            this.step_num1.Minimum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            -2147483648});
             this.step_num1.Name = "step_num1";
             this.step_num1.Size = new System.Drawing.Size(120, 22);
             this.step_num1.TabIndex = 1;
@@ -1313,6 +1468,38 @@
             this.label14.TabIndex = 0;
             this.label14.Text = "M1";
             this.label14.Click += new System.EventHandler(this.label14_Click);
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Increment = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Location = new System.Drawing.Point(85, 385);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
+            this.numericUpDown1.TabIndex = 39;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            8,
+            0,
+            0,
+            0});
+            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(9, 387);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(70, 17);
+            this.label23.TabIndex = 40;
+            this.label23.Text = "Incrément";
             // 
             // Form1
             // 
@@ -1382,6 +1569,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.step_num2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.velocity_num1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.step_num1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1489,5 +1677,7 @@
         private System.Windows.Forms.PictureBox unchecked3;
         private System.Windows.Forms.PictureBox unchecked2;
         private System.Windows.Forms.PictureBox unchecked1;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
     }
 }

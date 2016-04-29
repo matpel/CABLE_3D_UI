@@ -809,7 +809,7 @@ namespace WindowsFormsApplication1
 
         private void engaged1_CheckedChanged_1(object sender, EventArgs e)
         {
-            if(engaged1.Checked && !(s_calibrated[0].isAttached()))
+            if(engaged1.Checked)
             {
                 unchecked1.Visible = false;
                 
@@ -817,31 +817,34 @@ namespace WindowsFormsApplication1
                 {
                     checked1.Visible = true;
                     step_num1.Value = s_calibrated[0].stepper.steppers[0].CurrentPosition;
+                    s_calibrated[0].stepper.steppers[0].VelocityLimit = (int)velocity_num1.Value;
                 }
                 else
                 {
                     unchecked1.Visible = true;
                     engaged1.Checked = false;
                 }
-                engaged1.Checked = false;
-
-            }
-            else if (s_calibrated[0].isAttached())
-            {
-                s_calibrated[0].close();
-                unchecked1.Visible = true;
-                checked1.Visible = false;
             }
             else
             {
+                try
+                {
+                    s_calibrated[0].stepper.steppers[0].Engaged = false;
+                    s_calibrated[0].stepper.close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 unchecked1.Visible = true;
                 checked1.Visible = false;
             }
+
         }
 
         private void engaged2_CheckedChanged(object sender, EventArgs e)
         {
-            if (engaged2.Checked && !(s_calibrated[1].isAttached()))
+            if (engaged2.Checked)
             {
                 unchecked2.Visible = false;
 
@@ -849,23 +852,25 @@ namespace WindowsFormsApplication1
                 {
                     checked2.Visible = true;
                     step_num2.Value = s_calibrated[1].stepper.steppers[0].CurrentPosition;
+                    s_calibrated[1].stepper.steppers[0].VelocityLimit = (int)velocity_num2.Value;
                 }
                 else
                 {
                     unchecked2.Visible = true;
                     engaged2.Checked = false;
                 }
-                engaged2.Checked = false;
-
-            }
-            else if (s_calibrated[1].isAttached())
-            {
-                s_calibrated[1].close();
-                unchecked2.Visible = true;
-                checked2.Visible = false;
             }
             else
             {
+                try
+                {
+                    s_calibrated[1].stepper.steppers[0].Engaged = false;
+                    s_calibrated[1].stepper.close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 unchecked2.Visible = true;
                 checked2.Visible = false;
             }
@@ -873,7 +878,7 @@ namespace WindowsFormsApplication1
 
         private void engaged3_CheckedChanged_2(object sender, EventArgs e)
         {
-            if (engaged3.Checked && !(s_calibrated[2].isAttached()))
+            if (engaged3.Checked)
             {
                 unchecked3.Visible = false;
 
@@ -881,23 +886,25 @@ namespace WindowsFormsApplication1
                 {
                     checked3.Visible = true;
                     step_num3.Value = s_calibrated[2].stepper.steppers[0].CurrentPosition;
+                    s_calibrated[2].stepper.steppers[0].VelocityLimit = (int)velocity_num3.Value;
                 }
                 else
                 {
                     unchecked3.Visible = true;
                     engaged3.Checked = false;
                 }
-                engaged3.Checked = false;
-
-            }
-            else if (s_calibrated[2].isAttached())
-            {
-                s_calibrated[2].close();
-                unchecked3.Visible = true;
-                checked3.Visible = false;
             }
             else
             {
+                try
+                {
+                    s_calibrated[2].stepper.steppers[0].Engaged = false;
+                    s_calibrated[2].stepper.close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 unchecked3.Visible = true;
                 checked3.Visible = false;
             }
@@ -905,7 +912,7 @@ namespace WindowsFormsApplication1
 
         private void engaged4_CheckedChanged(object sender, EventArgs e)
         {
-            if (engaged4.Checked && !(s_calibrated[3].isAttached()))
+            if (engaged4.Checked)
             {
                 unchecked4.Visible = false;
 
@@ -913,63 +920,33 @@ namespace WindowsFormsApplication1
                 {
                     checked4.Visible = true;
                     step_num4.Value = s_calibrated[3].stepper.steppers[0].CurrentPosition;
+                    s_calibrated[3].stepper.steppers[0].VelocityLimit = (int)velocity_num4.Value;
                 }
                 else
                 {
                     unchecked4.Visible = true;
                     engaged4.Checked = false;
                 }
-                engaged4.Checked = false;
-
-            }
-            else if (s_calibrated[3].isAttached())
-            {
-                s_calibrated[3].close();
-                unchecked4.Visible = true;
-                checked4.Visible = false;
             }
             else
             {
+                try
+                {
+                    s_calibrated[3].stepper.steppers[0].Engaged = false;
+                    s_calibrated[3].stepper.close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 unchecked4.Visible = true;
                 checked4.Visible = false;
-            }
-        }
-
-        private void engaged6_CheckedChanged(object sender, EventArgs e)
-        {
-            if (engaged6.Checked && !(s_calibrated[5].isAttached()))
-            {
-                unchecked6.Visible = false;
-
-                if (s_calibrated[5].load())
-                {
-                    checked6.Visible = true;
-                    step_num6.Value = s_calibrated[5].stepper.steppers[0].CurrentPosition;
-                }
-                else
-                {
-                    unchecked6.Visible = true;
-                    engaged6.Checked = false;
-                }
-                engaged6.Checked = false;
-
-            }
-            else if (s_calibrated[5].isAttached())
-            {
-                s_calibrated[5].close();
-                unchecked6.Visible = true;
-                checked6.Visible = false;
-            }
-            else
-            {
-                unchecked6.Visible = true;
-                checked6.Visible = false;
             }
         }
 
         private void engaged5_CheckedChanged(object sender, EventArgs e)
         {
-            if (engaged5.Checked && !(s_calibrated[4].isAttached()))
+            if (engaged5.Checked)
             {
                 unchecked5.Visible = false;
 
@@ -977,25 +954,61 @@ namespace WindowsFormsApplication1
                 {
                     checked5.Visible = true;
                     step_num5.Value = s_calibrated[4].stepper.steppers[0].CurrentPosition;
+                    s_calibrated[4].stepper.steppers[0].VelocityLimit = (int)velocity_num5.Value;
                 }
                 else
                 {
                     unchecked5.Visible = true;
                     engaged5.Checked = false;
                 }
-                engaged5.Checked = false;
-
-            }
-            else if (s_calibrated[4].isAttached())
-            {
-                s_calibrated[4].close();
-                unchecked5.Visible = true;
-                checked5.Visible = false;
             }
             else
             {
+                try
+                {
+                    s_calibrated[4].stepper.steppers[0].Engaged = false;
+                    s_calibrated[4].stepper.close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 unchecked5.Visible = true;
                 checked5.Visible = false;
+            }
+        }
+
+        private void engaged6_CheckedChanged(object sender, EventArgs e)
+        {
+            if (engaged6.Checked)
+            {
+                unchecked6.Visible = false;
+
+                if (s_calibrated[5].load())
+                {
+                    checked6.Visible = true;
+                    step_num6.Value = s_calibrated[5].stepper.steppers[0].CurrentPosition;
+                    s_calibrated[5].stepper.steppers[0].VelocityLimit = (int)velocity_num6.Value;
+                }
+                else
+                {
+                    unchecked6.Visible = true;
+                    engaged6.Checked = false;
+                }
+            }
+            else
+            {
+                try
+                {
+                    s_calibrated[5].stepper.steppers[0].Engaged = false;
+                    s_calibrated[5].stepper.close();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                unchecked6.Visible = true;
+                checked6.Visible = false;
             }
         }
 
@@ -1007,6 +1020,16 @@ namespace WindowsFormsApplication1
         private void unchecked6_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            step_num1.Increment = numericUpDown1.Value;
+            step_num2.Increment = numericUpDown1.Value;
+            step_num3.Increment = numericUpDown1.Value;
+            step_num4.Increment = numericUpDown1.Value;
+            step_num5.Increment = numericUpDown1.Value;
+            step_num6.Increment = numericUpDown1.Value;
         }
     }
 }

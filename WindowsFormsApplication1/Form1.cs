@@ -1003,5 +1003,10 @@ namespace WindowsFormsApplication1
         {
 
         }
+
+        private void unchecked6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

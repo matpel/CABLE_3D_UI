@@ -796,6 +796,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(553, 538);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl1.TabIndex = 77;
             // 
             // tabPage1
@@ -926,6 +927,7 @@
             this.unchecked6.Size = new System.Drawing.Size(34, 39);
             this.unchecked6.TabIndex = 38;
             this.unchecked6.TabStop = false;
+            this.unchecked6.Click += new System.EventHandler(this.unchecked6_Click);
             // 
             // unchecked5
             // 
@@ -1317,10 +1319,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(552, 536);
+            this.ClientSize = new System.Drawing.Size(549, 536);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "3D Printer";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.length1_wid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.length2_wid)).EndInit();

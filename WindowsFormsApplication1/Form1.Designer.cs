@@ -690,10 +690,10 @@
             // 
             // dt_num
             // 
-            this.dt_num.DecimalPlaces = 2;
-            this.dt_num.Location = new System.Drawing.Point(456, 409);
+            this.dt_num.DecimalPlaces = 3;
+            this.dt_num.Location = new System.Drawing.Point(43, 364);
             this.dt_num.Name = "dt_num";
-            this.dt_num.Size = new System.Drawing.Size(79, 22);
+            this.dt_num.Size = new System.Drawing.Size(120, 22);
             this.dt_num.TabIndex = 75;
             this.dt_num.Value = new decimal(new int[] {
             7,
@@ -705,7 +705,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(430, 411);
+            this.label13.Location = new System.Drawing.Point(13, 366);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(20, 17);
             this.label13.TabIndex = 76;

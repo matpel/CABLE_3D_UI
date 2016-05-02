@@ -76,7 +76,7 @@ namespace Move_cable
             Length = l1;
             i++;
             stopped = false;
-            System.Threading.Thread.Sleep(10);
+            System.Threading.Thread.Sleep((int)(1000*dt));
             stopped = true;
         }
         public bool isStopped()
@@ -98,7 +98,7 @@ namespace Move_cable
             string[] lines = System.IO.File.ReadAllLines(Path);
             foreach (string line in lines)
             {
-                liste.Add(Convert.ToDouble(line.Replace('.', ',')));
+                liste.Add(Convert.ToDouble(line.Replace(',', '.')));
             }
             N_step = liste.Count;
 

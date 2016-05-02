@@ -40,11 +40,8 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            s_calibrated = new List<MyStepper>();
-            for(int i = 0; i<6; i++)
-            {
-                s_calibrated.Add(new MyStepper(100));
-            }
+            s_calibrated = new List<MyStepper>() { new MyStepper(100), new MyStepper(100), new MyStepper(100), new MyStepper(100), new MyStepper(100), new MyStepper(100) };
+            
             paths = new List<TextBox> { path1_wid, path2_wid, path3_wid, path4_wid, path5_wid, path6_wid };
             checkBoxes = new List<CheckBox> { checkBox1, checkBox2, checkBox3, checkBox4, checkBox5, checkBox6 };
             lengths = new List<NumericUpDown> { length1_wid, length2_wid, length3_wid, length4_wid, length5_wid, length6_wid };
